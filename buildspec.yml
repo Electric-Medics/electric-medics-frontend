@@ -23,6 +23,4 @@ phases:
 
 artifacts:
   files:
-    - src/index.tsx
-    - package.json
-    - yarn.lock
+    - /build
