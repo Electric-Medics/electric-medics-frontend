@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Container } from '@material-ui/core';
 import './App.css';
 
+import MenuBar from './components/MenuBar';
+
 import About from './views/About';
 import Home from './views/Home';
-import MenuBar from './components/MenuBar';
 import Reviews from './views/Reviews';
 import Services from './views/Services';
 import Showroom from './views/Showroom';
