@@ -16,7 +16,7 @@ phases:
     commands:
       - echo Build started on `date`
       - yarn build
-      -yarn test
+      - yarn test
   post_build:
     commands:
       - eccho Build completed on `date`
