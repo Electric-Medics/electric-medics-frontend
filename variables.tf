@@ -54,7 +54,7 @@ variable "github_url" {
 variable "github_user" {
     type = string
     description = "the user name of the github account"
-    default = "Tbloom9787"
+    default = "Electric-Medics"
 }
 
 variable "github_repo" {

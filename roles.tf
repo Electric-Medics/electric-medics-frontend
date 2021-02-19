@@ -84,7 +84,7 @@ POLICY
 }
 
 resource "aws_iam_role" "codepipeline_role" {
-  name = "test-role"
+  name = "frontend-role"
 
   assume_role_policy = <<EOF
 {
