@@ -23,6 +23,6 @@ phases:
 
 artifacts:
   files:
-    - App.tsx
+    - '**/*'
     - package.json
     - yarn.lock
