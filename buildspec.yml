@@ -19,7 +19,7 @@ phases:
 #      - yarn test
   post_build:
     commands:
-      - eccho Build completed on `date`
+      - echo Build completed on `date`
 
 artifacts:
   files:
