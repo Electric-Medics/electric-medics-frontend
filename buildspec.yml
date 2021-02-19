@@ -23,4 +23,6 @@ phases:
 
 artifacts:
   files:
-    - /build
+    - '**/*'
+    discard-paths: nodejs
+    base-directory: build
