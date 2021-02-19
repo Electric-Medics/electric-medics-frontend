@@ -10,7 +10,7 @@ const MenuBar = () => {
     console.log(e);
     const name = e.target as HTMLElement;
     const link = name.innerText.toLowerCase();
-    <Link to={`/`} />
+    <Link to={`/${link}`} />
   };
 
   return (
