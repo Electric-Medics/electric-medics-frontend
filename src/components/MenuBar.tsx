@@ -1,41 +1,108 @@
 import React from 'react';
-import { AppBar, IconButton, Toolbar } from "@material-ui/core";
-import { Link } from 'react-router-dom';
 import Icon from '@mdi/react';
-import { mdiAccountHardHat, mdiBriefcase, mdiHome, mdiHomeGroup, mdiInformation } from '@mdi/js'
+import {
+  AppBar,
+  Button,
+  Container,
+  makeStyles,
+  styled,
+  Toolbar,
+} from '@material-ui/core';
+import {
+  mdiAccountHardHat,
+  mdiBriefcase,
+  mdiHome,
+  mdiHomeGroup,
+  mdiInformation,
+  mdiNewspaperVariantMultiple,
+  mdiPhone,
+} from '@mdi/js';
+
+import Logo from '../assets/images/transparentLogo.png';
+
+//Styled Components
+const MenuButton = styled(Button)({
+  color: '#1A8FE3',
+  fontSize: '22px',
+  fontFamily: 'Arial, sans-serif',
+  marginLeft: '40px',
+});
+
+const MenuIcon = styled(Icon)({
+  padding: '5px',
+});
+
+//Custom makeStyles Hook
+const useStyles = makeStyles({
+  appBar: {
+    flexDirection: 'row',
+    backgroundColor: '#F18805',
+  },
+  toolbar: {
+    position: 'relative',
+    display: 'flex',
+    backgroundColor: '#F18805',
+  },
+  toolbarContainer: {
+    justifyContent: 'space-between',
+    backgroundColor: '#F18805',
+  },
+});
 
 const MenuBar = () => {
-
-  const onClick = (e : React.MouseEvent<HTMLButtonElement>) => {
-    console.log(e);
-    const name = e.target as HTMLElement;
-    const link = name.innerText.toLowerCase();
-    <Link to={`/${link}`} />
-  };
+  const classes = useStyles();
 
   return (
-  <AppBar>
-    <Toolbar> 
-      <IconButton edge='start' name='home' onClick={onClick}>
-        <Icon path={mdiHome} size={1} />Home
-      </IconButton>
-      <IconButton edge='start' name='about' onClick={onClick}>
-        <Icon path={mdiInformation} size={1} />About
-      </IconButton>
-      <IconButton edge='start' name='services' onClick={onClick}>
-        <Icon path={mdiAccountHardHat} size={1} />Services
-      </IconButton>
-      <IconButton edge='start' name='reviews' onClick={onClick}>
-        <Icon path={mdiAccountHardHat} size={1} />Reviews
-      </IconButton>
-      <IconButton edge='start' name='showroom' onClick={onClick}>
-        <Icon path={mdiHomeGroup} size={1} />Showroom
-      </IconButton>
-      <IconButton edge='start' name='careers' onClick={onClick}>
-        <Icon path={mdiBriefcase} size={1} />Careers
-      </IconButton>
-    </Toolbar>
-  </AppBar>
+    <Container maxWidth='xl'>
+      <AppBar position={'sticky' || 'relative'} className={classes.appBar}>
+        <Toolbar className={classes.toolbar}>
+          <MenuButton href='/'>
+            <img
+              src={Logo}
+              alt='Electrics Medics Logo'
+              style={{
+                position: 'relative',
+                height: '125px',
+                width: '225px',
+              }}
+            />
+          </MenuButton>
+          <Container maxWidth='xl' className={classes.toolbarContainer}>
+            <MenuButton href='/'>
+              <MenuIcon path={mdiHome} size={1} color='#1A8FE3' />
+              Home
+            </MenuButton>
+            <MenuButton href='/about'>
+              <MenuIcon path={mdiInformation} size={1} color='#1A8FE3' />
+              About
+            </MenuButton>
+            <MenuButton href='/services'>
+              <MenuIcon path={mdiAccountHardHat} size={1} color='#1A8FE3' />
+              Services
+            </MenuButton>
+            <MenuButton href='/reviews'>
+              <MenuIcon
+                path={mdiNewspaperVariantMultiple}
+                size={1}
+                color='#1A8FE3'
+              />
+              Reviews
+            </MenuButton>
+            <MenuButton href='/showroom'>
+              <MenuIcon path={mdiHomeGroup} size={1} color='#1A8FE3' />
+              Showroom
+            </MenuButton>
+            <MenuButton href='/careers'>
+              <MenuIcon path={mdiBriefcase} size={1} color='#1A8FE3' />
+              Careers
+            </MenuButton>
+            <MenuButton href='tel:(949)200-8956'>
+              <MenuIcon path={mdiPhone} size={1} color='#1A8FE3' /> 949-200-8956
+            </MenuButton>
+          </Container>
+        </Toolbar>
+      </AppBar>
+    </Container>
   );
 };
 
