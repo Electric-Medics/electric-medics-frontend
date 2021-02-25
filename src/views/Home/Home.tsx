@@ -1,6 +1,6 @@
 import React from "react";
-import MainCarousel from "../../components/MainCarousel";
 import "./Home.css";
+import MainCarousel from "../../components/MainCarousel";
 
 const Home = () => {
   return (

@@ -1,27 +1,29 @@
 import React from "react";
-import { Card, makeStyles } from "@material-ui/core";
+import SimpleImageSlider from "../components/Carousel/ImageSlider";
+import test1 from "../assets/images/homepage-main.jpg";
+import test2 from "../assets/images/homepage-1.jpg";
+import test3 from "../assets/images/homepage-2.jpg";
+import test4 from "../assets/images/hompage-3.jpg";
 
 
-const useStyles = makeStyles({
-  card: {
-    backgroundColor: "#ff7c7c",
-    borderRadius: 5,
-    padding: "75px 50px",
-    margin: "0px 25px",
-    width: "500px",
-    boxShadow: "20px 20px 20px black",
-    display: "flex",
-    justifyContent: "center",
-  },
-});
+const IMAGES = [
+  { url: test1 },
+  { url: test2 },
+  { url: test3 },
+  { url: test4 }
+];
 
-const MainCarousel = (props) => {
-  const classes = useStyles();
-
+const MainCarousel = () => {
   return (
-    <Card className={classes.card}>
-      <h1>Dick</h1>
-    </Card>
+    <SimpleImageSlider
+      style={{ margin: "0 auto" }}
+      width={1900}
+      height={500}
+      images={IMAGES}
+      showBullets={true}
+      showNavs={true}
+      useGPURender={true}
+    />
   );
 }
 
