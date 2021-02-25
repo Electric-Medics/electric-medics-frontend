@@ -18,13 +18,14 @@ import {
   mdiPhone,
 } from '@mdi/js';
 
-import Logo from '../assets/images/transparentLogo.png';
+import Header from './Header/Header';
 
 //Styled Components
 const MenuButton = styled(Button)({
   color: '#1A8FE3',
-  fontSize: '22px',
-  fontFamily: 'Arial, sans-serif',
+  fontSize: '16px',
+  fontFamily: 'Work Sans, sans-serif',
+  fontWeight: 400,
   marginLeft: '40px',
 });
 
@@ -35,16 +36,22 @@ const MenuIcon = styled(Icon)({
 //Custom makeStyles Hook
 const useStyles = makeStyles({
   appBar: {
+    display: 'flex',
     flexDirection: 'row',
     backgroundColor: '#F18805',
+    justifyContent: 'center',
+    alignContent: 'center',
+    top: '800px',
+    maxWidth: '75%',
+    left: '0',
+    marginLeft: '14%',
+    fontFamily: 'Work Sans, sans-serif',
   },
   toolbar: {
     position: 'relative',
-    display: 'flex',
     backgroundColor: '#F18805',
   },
   toolbarContainer: {
-    justifyContent: 'space-between',
     backgroundColor: '#F18805',
   },
 });
@@ -53,20 +60,10 @@ const MenuBar = () => {
   const classes = useStyles();
 
   return (
-    <Container maxWidth='xl'>
+    <Container disableGutters={true} maxWidth={false}>
+      <Header />
       <AppBar position={'sticky' || 'relative'} className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
-          <MenuButton href='/'>
-            <img
-              src={Logo}
-              alt='Electrics Medics Logo'
-              style={{
-                position: 'relative',
-                height: '125px',
-                width: '225px',
-              }}
-            />
-          </MenuButton>
           <Container maxWidth='xl' className={classes.toolbarContainer}>
             <MenuButton href='/'>
               <MenuIcon path={mdiHome} size={1} color='#1A8FE3' />
@@ -96,8 +93,9 @@ const MenuBar = () => {
               <MenuIcon path={mdiBriefcase} size={1} color='#1A8FE3' />
               Careers
             </MenuButton>
-            <MenuButton href='tel:(949)200-8956'>
-              <MenuIcon path={mdiPhone} size={1} color='#1A8FE3' /> 949-200-8956
+            <MenuButton href='tel:(949)462-9200'>
+              <MenuIcon path={mdiPhone} size={1} color='#1A8FE3' /> (949)
+              462-9200
             </MenuButton>
           </Container>
         </Toolbar>
