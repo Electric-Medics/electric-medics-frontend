@@ -6,7 +6,7 @@ import "./App.css";
 import MenuBar from "./components/MenuBar";
 
 import About from "./views/About";
-import Home from "./views/Home";
+import Home from "./views/Home/Home";
 import Reviews from "./views/Reviews";
 import Services from "./views/Services";
 import Showroom from "./views/Showroom";
