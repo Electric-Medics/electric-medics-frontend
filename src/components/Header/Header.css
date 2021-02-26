@@ -1,11 +1,13 @@
 .btnSubmitRequest {
   position: relative;
-  color: red;
+  color: #1a8fe3;
+  font-weight: 500;
   width: 256px;
   height: 64px;
   line-height: 64px;
   transition: all 0.3s;
   font-family: 'Work Sans', sans-serif;
+  letter-spacing: 3px;
 }
 .btnSubmitRequest::before,
 .btnSubmitRequest::after {
@@ -22,7 +24,6 @@
   display: flex;
   width: 256px;
   height: 64px;
-  background: #0000;
   position: relative;
   text-align: center;
   top: 25px;
@@ -30,12 +31,13 @@
 
 .btnSubmitRequest::before {
   opacity: 0;
-  background: rgba(167, 5, 5, 0.1);
   transform: scale(1.3, 1.3);
 }
 
 .btnSubmitRequest:hover {
   cursor: pointer;
+  background-color: #f18805;
+  color: white;
 }
 
 .btnSubmitRequest:hover::before {
@@ -45,10 +47,18 @@
 
 .btnSubmitRequest::after {
   transition: all 0.3s;
-  border: 1px solid rgba(255, 0, 0, 0.5);
+  border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .btnSubmitRequest:hover::after {
   transform: scale(0, 0);
   opacity: 0;
+}
+
+.headerLogo:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.MuiButtonBase-root.MuiButton-root.MuiButton-text.makeStyles-mapMarker-7:hover {
+  background-color: rgba(0, 0, 0, 0) !important;
 }
