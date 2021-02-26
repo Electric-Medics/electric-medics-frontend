@@ -62,7 +62,6 @@ const Header = () => {
         <Button
           className={classes.mapMarker}
           href='https://www.google.com/maps/place/Electric+Medics/@33.613528,-117.6789378,15z/data=!4m5!3m4!1s0x0:0xbfe07d4931a23eaf!8m2!3d33.613528!4d-117.6789378'
-          style={{ backgroundColor: 'rgba(0, 0, 0, 0) !important' }}
         >
           <Icon path={mdiMapMarker} size={2} color='#1A8FE3' />
         </Button>
