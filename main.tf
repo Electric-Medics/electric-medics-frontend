@@ -25,7 +25,7 @@ resource "aws_codebuild_source_credential" "frontend" {
 
 resource "aws_codebuild_project" "frontend" {
   name          = var.aws_codebuild_name
-  description   = "test_codebuild_project"
+  description   = "tf_frontend_codebuild_project"
   build_timeout = "5"
   service_role  = aws_iam_role.frontend.arn
 
@@ -74,7 +74,7 @@ resource "aws_codebuild_project" "frontend" {
 }
 
 resource "aws_codepipeline" "codepipeline" {
-  name     = "tf-test-pipeline"
+  name     = "tf-frontend-pipeline"
   role_arn = aws_iam_role.codepipeline_role.arn
 
   artifact_store {

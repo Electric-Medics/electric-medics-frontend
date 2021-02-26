@@ -1,0 +1,28 @@
+# Do not change this version, it is the aws buildspec not our file versioning
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 10
+    commands:
+      - echo Executing Install Phase...
+      - npm install -g yarn
+  pre_build:
+    commands:
+      - echo Installing source Yarn dependencies...
+      - yarn install
+  build:
+    commands:
+      - echo Build started on `date`
+      - yarn build
+#      - yarn test
+  post_build:
+    commands:
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
+  base-directory: build
