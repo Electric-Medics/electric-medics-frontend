@@ -1,10 +1,14 @@
 import React from 'react';
+import { Grid } from '@material-ui/core';
+import MainCarousel from '../components/Carousel/MainCarousel';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <Grid container>
+      <Grid item xs={12}>
+        <MainCarousel/>
+      </Grid>
+    </Grid>
   );
 };
 
