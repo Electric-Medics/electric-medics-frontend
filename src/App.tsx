@@ -6,7 +6,7 @@ import './App.css';
 import About from './views/About';
 import Careers from './views/Careers';
 import Home from './views/Home';
-import MenuBar from './components/MenuBar';
+import MenuBar from './components/MenuBar/MenuBar';
 import Reviews from './views/Reviews';
 import Services from './views/Services';
 import Showroom from './views/Showroom';
@@ -14,7 +14,7 @@ import Showroom from './views/Showroom';
 const App = () => {
   return (
     <Router>
-      <Container maxWidth={false}>
+      <Container maxWidth={false} style={{ padding: 0, margin: 0 }}>
         <MenuBar />
         <Route exact path='/' component={Home} />
         <Route exact path='/about' component={About} />
