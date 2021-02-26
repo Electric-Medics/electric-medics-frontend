@@ -3,10 +3,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Container } from "@material-ui/core";
 import "./App.css";
 
-import MenuBar from "./components/MenuBar";
-
 import About from "./views/About";
-import Home from "./views/Home/Home";
+import Careers from "./views/Careers";
+import Home from "./views/Home";
+import MenuBar from "./components/MenuBar/MenuBar";
 import Reviews from "./views/Reviews";
 import Services from "./views/Services";
 import Showroom from "./views/Showroom";
@@ -14,13 +14,14 @@ import Showroom from "./views/Showroom";
 const App = () => {
   return (
     <Router>
-      <Container maxWidth={"xl"} disableGutters={true}>
+      <Container maxWidth={false} style={{ padding: 0, margin: 0 }}>
         <MenuBar />
         <Route exact path="/" component={Home} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/services" component={Services} />
-        <Route exact path="/reviews" component={Reviews} />
-        <Route exact path="/showroom" component={Showroom} />
+        <Route path="/about" component={About} />
+        <Route path="/services" component={Services} />
+        <Route path="/reviews" component={Reviews} />
+        <Route path="/showroom" component={Showroom} />
+        <Route path="/careers" component={Careers} />
       </Container>
     </Router>
   );

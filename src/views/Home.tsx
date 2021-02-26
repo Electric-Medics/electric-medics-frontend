@@ -1,6 +1,5 @@
 import React from "react";
-import "./Home.css";
-import MainCarousel from "../../components/Carousel/MainCarousel";
+import MainCarousel from "../components/Carousel/MainCarousel";
 import { Grid } from "@material-ui/core";
 
 const Home = () => {
