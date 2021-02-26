@@ -117,8 +117,7 @@ export default {
       transition: `${duration}s`,
       backgroundImage: `url(${url})`,
       backgroundRepeat: "no-repeat",
-      backgroundPosition: "50% 100%",
-      paddingTop: "150px",
+      backgroundPosition: "center 75%",
       transform: isGpuRender
         ? `translate3d(${idx * 100}%, 0px, 0px)`
         : `translate(${idx * 100}%, 0px)`,

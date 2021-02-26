@@ -186,4 +186,5 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
   );
 };
 
+
 export default SimpleImageSlider;
