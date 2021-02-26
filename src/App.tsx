@@ -17,11 +17,11 @@ const App = () => {
       <Container maxWidth={false} style={{ padding: 0, margin: 0 }}>
         <MenuBar />
         <Route exact path='/' component={Home} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/services' component={Services} />
-        <Route exact path='/reviews' component={Reviews} />
-        <Route exact path='/showroom' component={Showroom} />
-        <Route exact path='/careers' component={Careers} />
+        <Route path='/about' component={About} />
+        <Route path='/services' component={Services} />
+        <Route path='/reviews' component={Reviews} />
+        <Route path='/showroom' component={Showroom} />
+        <Route path='/careers' component={Careers} />
       </Container>
     </Router>
   );
