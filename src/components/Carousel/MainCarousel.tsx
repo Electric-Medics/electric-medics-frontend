@@ -22,7 +22,7 @@ type SliderOptions = {
 const MainCarousel = () => {
     const [sliderOptions] = useState<SliderOptions>({
       useGPURender: true,
-      showNavs: true,
+      showNavs: false,
       showBullets: true,
       navStyle: 1,
       duration: 0.5,
