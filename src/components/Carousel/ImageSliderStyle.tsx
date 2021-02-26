@@ -80,9 +80,10 @@ export default {
   ): React.CSSProperties =>
     ({
       ...basic,
+      display: "flex",
       overflow: "hidden",
-      width,
-      height,
+      width: "100%",
+      height: "600px",
       backgroundColor,
     } as React.CSSProperties),
   getSubContainer: (
@@ -93,8 +94,8 @@ export default {
       ...basic,
       position: "absolute",
       overflow: "hidden",
-      width,
-      height,
+      width: "100%",
+      height: "100%",
     } as React.CSSProperties),
   getBulletContainer: (bulletLength: number): React.CSSProperties =>
     ({
@@ -111,8 +112,13 @@ export default {
     ({
       ...basicSlide,
       overflow: "hidden",
+      width: "100%",
+      backgroundSize: "cover",
       transition: `${duration}s`,
       backgroundImage: `url(${url})`,
+      backgroundRepeat: "no-repeat",
+      backgroundPosition: "50% 100%",
+      paddingTop: "150px",
       transform: isGpuRender
         ? `translate3d(${idx * 100}%, 0px, 0px)`
         : `translate(${idx * 100}%, 0px)`,

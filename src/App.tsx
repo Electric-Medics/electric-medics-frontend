@@ -14,7 +14,7 @@ import Showroom from "./views/Showroom";
 const App = () => {
   return (
     <Router>
-      <Container maxWidth="xl">
+      <Container maxWidth={"xl"} disableGutters={true}>
         <MenuBar />
         <Route exact path="/" component={Home} />
         <Route exact path="/about" component={About} />

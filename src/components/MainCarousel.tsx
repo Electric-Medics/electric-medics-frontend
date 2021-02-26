@@ -16,7 +16,7 @@ const IMAGES = [
 const MainCarousel = () => {
   return (
     <SimpleImageSlider
-      style={{ margin: "0 auto" }}
+      style={{ margin: "0", padding: "0" }}
       width={1900}
       height={500}
       images={IMAGES}
