@@ -115,18 +115,18 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
     idx + 2 < images.length && ImagePreLoader.load(images[idx + 2].url);
   };
 
-  const autoPlay = (idx: number) => {
-    setTimeout(() => {
-      if (isSliding) {
-        console.log("BREAKS");
-        return;
-      } else if (slideIdx + 1 === 3) {
-        slide(slideIdx - 2);
-      } else {
-        slide(slideIdx + 1);
-      }
-    }, 5000)
-  }
+  // const autoPlay = (idx: number) => {
+  //   setTimeout(() => {
+  //     if (isSliding) {
+  //       console.log("BREAKS");
+  //       return;
+  //     } else if (slideIdx + 1 === 3) {
+  //       slide(slideIdx - 2);
+  //     } else {
+  //       slide(slideIdx + 1);
+  //     }
+  //   }, 5000)
+  // }
 
   useEffect(() => {
     if (isSliding) {
@@ -151,7 +151,7 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
         );
       }, 50);
     }
-    setIsSliding(false);
+    // setIsSliding(false);
   }, [slideIdx, isSliding]);
 
   const handleSlideEnd = useCallback(() => {
@@ -195,7 +195,7 @@ const SimpleImageSlider: React.FC<SimpleImageSliderProps> = ({
             onClickBullets={handleClickBullets}
           />
         )}
-        {autoPlay(slideIdx)}
+        {/* {autoPlay(slideIdx)} */}
       </div>
     </div>
   );
