@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   Button,
   ClickAwayListener,
@@ -8,9 +8,9 @@ import {
   MenuList,
   Paper,
   Popper,
-} from "@material-ui/core";
-import Icon from "@mdi/react";
-import { mdiAccountHardHat } from "@mdi/js";
+} from '@material-ui/core';
+import Icon from '@mdi/react';
+import { mdiAccountHardHat } from '@mdi/js';
 
 type DropDownMenuProps = {
   activeItem: string;
@@ -18,7 +18,7 @@ type DropDownMenuProps = {
 
 const useStyles = makeStyles({
   serviceIcon: {
-    padding: "5px",
+    padding: '5px',
   },
 });
 
@@ -45,7 +45,7 @@ const DropDownMenu = ({ activeItem }: DropDownMenuProps) => {
   };
 
   function handleListKeyDown(event: React.KeyboardEvent) {
-    if (event.key === "Tab") {
+    if (event.key === 'Tab') {
       event.preventDefault();
       setOpen(false);
     }
@@ -54,25 +54,25 @@ const DropDownMenu = ({ activeItem }: DropDownMenuProps) => {
   return (
     <>
       <Button
-        href="/services"
+        href='/services'
         ref={anchorRef}
-        aria-controls={open ? "menu-list-grow" : undefined}
-        aria-haspopup="true"
+        aria-controls={open ? 'menu-list-grow' : undefined}
+        aria-haspopup='true'
         onMouseEnter={handleToggle}
         onMouseLeave={mouseLeave}
         style={{
-          color: activeItem === "/services" ? "#F18805" : "#1A8FE3",
-          fontSize: "16px",
-          fontFamily: "Work Sans, sans-serif",
+          color: activeItem === '/services' ? '#F18805' : '#1A8FE3',
+          fontSize: '16px',
+          fontFamily: 'Work Sans, sans-serif',
           fontWeight: 500,
-          marginLeft: "40px",
+          marginLeft: '40px',
         }}
       >
         <Icon
           className={classes.serviceIcon}
           path={mdiAccountHardHat}
           size={1}
-          color={activeItem === "/services" ? "#F18805" : "#1A8FE3"}
+          color={activeItem === '/services' ? '#F18805' : '#1A8FE3'}
         />
         Services
       </Button>
@@ -87,17 +87,17 @@ const DropDownMenu = ({ activeItem }: DropDownMenuProps) => {
           <Grow
             {...TransitionProps}
             style={{
-              color: "#1A8FE3",
-              backgroundColor: "#e5e7e9",
+              color: '#1A8FE3',
+              backgroundColor: '#e5e7e9',
               transformOrigin:
-                placement === "bottom" ? "center top" : "center bottom",
+                placement === 'bottom' ? 'center top' : 'center bottom',
             }}
           >
             <Paper onMouseEnter={handleToggle} onMouseLeave={mouseLeave}>
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList
                   autoFocusItem={open}
-                  id="menu-list-grow"
+                  id='menu-list-grow'
                   onKeyDown={handleListKeyDown}
                 >
                   <MenuItem onClick={handleClose}>Service 1</MenuItem>
