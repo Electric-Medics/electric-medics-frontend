@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <Grid container>
       <Grid item xs={12}>
-        <MainCarousel/>
+        <MainCarousel />
       </Grid>
     </Grid>
   );
