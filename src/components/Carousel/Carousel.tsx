@@ -1,8 +1,6 @@
 import React from "react";
 import test from "../../assets/images/homepage-main.jpg";
 
-import "./Carousel.css";
-
 const Carousel = () => {
   return (
     <>
@@ -11,6 +9,7 @@ const Carousel = () => {
         className="carousel slide carousel-fade "
         data-bs-ride="carousel"
         data-interval="6000"
+        style={{ background: "#0000", height: "650px" }}
       >
         <div className="carousel-indicators">
           <button
@@ -44,18 +43,9 @@ const Carousel = () => {
                 srcSet={test}
                 alt="responsive"
                 className="d-block img-fluid"
+                style={{ width: "100%", maxHeight: "650px" }}
               />
             </picture>
-
-            <div className="carousel-caption">
-              <div>
-                <h2>Digital Craftsmanship</h2>
-                <p>We meticously build each site to get results</p>
-                <span className="btn btn-sm btn-outline-secondary">
-                  Learn More
-                </span>
-              </div>
-            </div>
           </div>
           <div className="carousel-item">
             <picture>
@@ -75,20 +65,9 @@ const Carousel = () => {
                 srcSet="https://www.statece.com/wp-content/uploads/sites/2/2019/06/1-Electrician.jpg"
                 alt="responsive"
                 className="d-block img-fluid"
+                style={{ width: "100%", maxHeight: "650px" }}
               />
             </picture>
-
-            <div className="carousel-caption justify-content-center align-items-center">
-              <div>
-                <h2>Every project begins with a sketch</h2>
-                <p>
-                  We work as an extension of your business to explore solutions
-                </p>
-                <span className="btn btn-sm btn-outline-secondary">
-                  Our Process
-                </span>
-              </div>
-            </div>
           </div>
           <div className="carousel-item">
             <picture>
@@ -108,16 +87,9 @@ const Carousel = () => {
                 srcSet="https://99designs-blog.imgix.net/blog/wp-content/uploads/2020/08/Electrician_Logos_jpg_DhYbEzou.jpg?auto=format&q=60&fit=max&w=930"
                 alt="responsive"
                 className="d-block img-fluid"
+                style={{ width: "100%", maxHeight: "650px" }}
               />
             </picture>
-
-            <div className="carousel-caption justify-content-center align-items-center">
-              <div>
-                <h2>Performance Optimization</h2>
-                <p>We monitor and optimize your site's long-term performance</p>
-                <span className="btn btn-sm btn-secondary">Learn How</span>
-              </div>
-            </div>
           </div>
         </div>
         {/* eslint-disable-next-line  */}
