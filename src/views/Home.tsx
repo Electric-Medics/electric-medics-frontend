@@ -9,8 +9,8 @@ const Home = () => {
     <Grid container>
       <Grid item xs={12}>
         <Carousel />
-        <HomeReviews />
         <AboutUs />
+        <HomeReviews />
       </Grid>
     </Grid>
   );
