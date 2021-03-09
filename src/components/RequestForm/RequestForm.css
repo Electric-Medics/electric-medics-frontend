@@ -2,3 +2,11 @@
   max-width: 730px;
   max-height: 430px;
 }
+
+.error-msg {
+  color: #cc0033;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 15px;
+  margin: 5px 0 0;
+}
