@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
 import Carousel from '../components/Carousel/Carousel';
-import HomeReviews from '../components/HomeReviews';
+import HomeReviews from '../components/HomeReviews/HomeReviews';
 import AboutUs from '../components/About/AboutUs';
 
 const Home = () => {
