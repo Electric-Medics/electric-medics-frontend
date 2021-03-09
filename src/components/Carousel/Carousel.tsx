@@ -1,5 +1,5 @@
-import React from "react";
-import test from "../../assets/images/homepage-main.jpg";
+import React from 'react';
+import test from '../../assets/images/homepage-main.jpg';
 
 const Carousel = () => {
   return (
@@ -9,7 +9,7 @@ const Carousel = () => {
         className="carousel slide carousel-fade "
         data-bs-ride="carousel"
         data-interval="6000"
-        style={{ background: "#0000", height: "650px" }}
+        style={{ background: "#0000", maxHeight: "650px" }}
       >
         <div className="carousel-indicators">
           <button
