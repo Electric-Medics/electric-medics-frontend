@@ -1,30 +1,33 @@
-import React from "react";
-import AboutUsIcon from "../../assets/images/AboutUsIcon.png";
+import React from 'react';
+import AboutUsIcon from '../../assets/images/AboutUsIcon.png';
 
 const AboutUs = () => {
   return (
     <div
-      className="container"
+      className='container'
       style={{
-        textAlign: "center",
-        fontFamily: "Work Sans, sans-serif",
-        padding: "15px",
+        textAlign: 'center',
+        fontFamily: 'Work Sans, sans-serif',
+        padding: '15px',
       }}
     >
       <img
         src={AboutUsIcon}
-        alt="aboutIcon"
+        alt='aboutIcon'
         style={{
-          display: "block",
-          margin: "40px auto",
-          maxHeight: "125px",
-          maxWidth: "125px",
+          display: 'block',
+          marginTop: '15px',
+          marginBottom: '40px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          maxHeight: '125px',
+          maxWidth: '125px',
         }}
       ></img>
-      <h1 style={{ marginBottom: "30px", fontWeight: 600 }}>
+      <h1 style={{ marginBottom: '30px', fontWeight: 600 }}>
         Why Homeowners Trust Electric Medics
       </h1>
-      <p style={{ fontWeight: 400, fontSize: "21px" }}>
+      <p style={{ fontWeight: 400, fontSize: '21px' }}>
         Delivering amazing results since 1995, Electric Medics are homeowners
         number #1 choice in Mission Viejo <br />
         for all of your electrical service and repair needs. We’re a small team
