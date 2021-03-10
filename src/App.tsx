@@ -5,6 +5,7 @@ import './App.css';
 
 import About from './views/About';
 import Careers from './views/Careers';
+import FadeInSection from './components/FadeInSection/FadeInSection';
 import Home from './views/Home';
 import MenuBar from './components/MenuBar/MenuBar';
 import Reviews from './views/Reviews';
@@ -22,6 +23,7 @@ const App = () => {
         <Route path='/reviews' component={Reviews} />
         <Route path='/showroom' component={Showroom} />
         <Route path='/careers' component={Careers} />
+        <FadeInSection />
       </Container>
     </Router>
   );
