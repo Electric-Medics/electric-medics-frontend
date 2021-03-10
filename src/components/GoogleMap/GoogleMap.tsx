@@ -19,9 +19,6 @@ const GoogleMap: FunctionComponent<GoogleMapProps> = ({
   location,
   zoomLevel,
 }: GoogleMapProps) => {
-  const handleApiLoaded = (map, maps) => {
-    console.log(map, maps);
-  };
   return (
     <div className='map'>
       <div className='google-map'>
@@ -29,8 +26,6 @@ const GoogleMap: FunctionComponent<GoogleMapProps> = ({
           bootstrapURLKeys={{ key: 'AIzaSyCK_sufXJt1gXyEwu1oLAmDq6YqJb5pKQo' }}
           defaultCenter={location}
           defaultZoom={zoomLevel}
-          yesIWantToUseGoogleMapApiInternals
-          onGoogleApiLoaded={({ map, maps }) => handleApiLoaded(map, maps)}
         >
           <LocationPin lat={location.lat} lng={location.lng} />
         </GoogleMapReact>
