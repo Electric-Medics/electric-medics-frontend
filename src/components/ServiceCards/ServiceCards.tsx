@@ -1,8 +1,11 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import card1 from '../../assets/images/ServiceCard-1.png';
 import card2 from '../../assets/images/ServiceCard-2.png';
 
 const ServiceCards = () => {
+  const history = useHistory();
+
   const Checkmark = (
     <svg
       style={{ height: '20px', width: '20px' }}
@@ -50,24 +53,66 @@ const ServiceCards = () => {
         >
           <img src={card1} className='card-img-top' alt='...' />
           <div className='card-body'>
-            <h5 className='card-title'>Electrical Service & Installation</h5>
+            <h5
+              className='card-title'
+              style={{ fontWeight: 600, fontSize: '30px' }}
+            >
+              Electrical Service & Installation
+            </h5>
             <p className='card-text'>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              All electrical service and installations are only done with the
+              best of quality and communication througout the whole process.
+              Whether you need to upgrade your electrical panel or rennovate an
+              entire home project, we guarantee top service.
             </p>
           </div>
           <ul className='list-group list-group-flush'>
-            <li className='list-group-item'> {Checkmark} Light fixture installation</li>
+            <li className='list-group-item'>
+              {Checkmark} Light fixture installation
+            </li>
             <li className='list-group-item'> {Checkmark} Ceiling fans</li>
-            <li className='list-group-item'> {Checkmark} Electrical Vehicle (EV) Chargers</li>
+            <li className='list-group-item'>
+              {Checkmark} Electrical Vehicle (EV) Chargers
+            </li>
+            <li className='list-group-item'>{Checkmark} Ring / Nest Devices</li>
+            <li className='list-group-item'>{Checkmark} Recessed lighting</li>
+            <li className='list-group-item'>
+              {Checkmark} Bathroom exhaust fans
+            </li>
+            <li className='list-group-item'> {Checkmark} Lighting control</li>
+            <li className='list-group-item'>
+              {Checkmark} Electrical panel upgrades
+            </li>
+            <li className='list-group-item'>
+              {Checkmark} Dedicated circuits 120 volt or 240 volt
+            </li>
+            <li className='list-group-item'>
+              {Checkmark} Added outlets and switches interior and outdoor
+            </li>
+            <li className='list-group-item'>
+              {Checkmark} Smoke and carbon dioxide connectors
+            </li>
           </ul>
           <div className='card-body'>
-            <a href='#' className='card-link'>
-              Card link
-            </a>
-            <a href='#' className='card-link'>
-              Another link
-            </a>
+            <div className='d-flex justify-content-center mt-5'>
+              <div>
+                <button
+                  type='button'
+                  className='btn btn-lg btn-primary'
+                  style={{
+                    fontFamily: 'Work Sans, sans-serif',
+                    fontWeight: 400,
+                    fontSize: '21px',
+                    letterSpacing: '.5px',
+                  }}
+                  onClick={() => {
+                    history.push('/services');
+                  }}
+                >
+                  Book now!
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         <div
@@ -75,25 +120,71 @@ const ServiceCards = () => {
           style={{ width: '18rem', marginTop: '30px', margin: '0 200px' }}
         >
           <img src={card2} className='card-img-top' alt='...' />
-          <div className='card-body'>
-            <h5 className='card-title'>Electrical Repair</h5>
+          <div className='card-body' style={{ height: '110px' }}>
+            <h5
+              className='card-title'
+              style={{ fontWeight: 600, fontSize: '30px' }}
+            >
+              Electrical Repair
+            </h5>
             <p className='card-text'>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+              We handle every common and uncommon residential electrical issue
+              possible. If any emergency power outage or circuit breakers trip,
+              we are here to assist for any Mission Viejo neighbor or those in
+              the surrounding areas.
             </p>
           </div>
-          <ul className='list-group list-group-flush'>
-            <li className='list-group-item'> {Checkmark} Lighting and outlet circuit repair</li>
-            <li className='list-group-item'> {Checkmark} Power outage or issues</li>
-            <li className='list-group-item'> {Checkmark} Electrical panel repairs</li>
+          <ul
+            className='list-group list-group-flush'
+            style={{ marginTop: '85px' }}
+          >
+            <li className='list-group-item'>
+              {Checkmark} Lighting and outlet circuit repair
+            </li>
+            <li className='list-group-item'>
+              {Checkmark} Power outage or issues
+            </li>
+            <li className='list-group-item'>
+              {Checkmark} Circuit breaker issues
+            </li>
+            <li className='list-group-item'>
+              {Checkmark} Aluminum wiring repair
+            </li>
+            <li className='list-group-item'>
+              {Checkmark} Electrical panel repairs
+            </li>
+            <li className='list-group-item'> {Checkmark} Dimmer replacement</li>
+            <li className='list-group-item'>
+              {Checkmark} GFCI circuits and devices
+            </li>
+            <li className='list-group-item'>
+              {Checkmark} Electrical troubleshooting/diagnostic
+            </li>
+            <li className='list-group-item'>
+              {Checkmark} Federal Pacific/Zinsco electrical panel repairs
+            </li>
           </ul>
           <div className='card-body'>
-            <a href='#' className='card-link'>
-              Card link
-            </a>
-            <a href='#' className='card-link'>
-              Another link
-            </a>
+            <div className='d-flex justify-content-center mt-5'>
+              <div>
+                <button
+                  type='button'
+                  className='btn btn-lg btn-primary'
+                  style={{
+                    fontFamily: 'Work Sans, sans-serif',
+                    fontWeight: 400,
+                    fontSize: '21px',
+                    letterSpacing: '.5px',
+                    marginTop: '100px',
+                  }}
+                  onClick={() => {
+                    history.push('/services');
+                  }}
+                >
+                  BOOK ONLINE
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
