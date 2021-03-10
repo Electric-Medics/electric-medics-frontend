@@ -1,7 +1,9 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import card1 from '../../assets/images/ServiceCard-1.png';
+import card1 from '../../assets/images/ServiceCard-1.jpg';
 import card2 from '../../assets/images/ServiceCard-2.png';
+
+import './ServiceCards.css';
 
 const ServiceCards = () => {
   const history = useHistory();
@@ -25,10 +27,10 @@ const ServiceCards = () => {
 
   return (
     <div
-      className='container-fluid p-5'
-      style={{ background: '#f5f5f5', fontFamily: 'Work Sans, sans-serif' }}
+      className='container-fluid mt-5'
+      style={{ fontFamily: 'Work Sans, sans-serif' }}
     >
-      <h1 className='text-center pb-2' style={{ fontWeight: 600 }}>
+      <h1 className='text-center' style={{ fontWeight: 600 }}>
         Our Electrical Services
       </h1>
       <p
@@ -46,143 +48,131 @@ const ServiceCards = () => {
         and we offer a 1 year parts and labor warranty for our electrical
         services.
       </p>
-      <div className='card-group'>
-        <div
-          className='card'
-          style={{ width: '18rem', marginTop: '30px', margin: '0 200px' }}
-        >
-          <img src={card1} className='card-img-top' alt='...' />
-          <div className='card-body'>
-            <h5
-              className='card-title'
-              style={{ fontWeight: 600, fontSize: '30px' }}
-            >
-              Electrical Service & Installation
-            </h5>
-            <p className='card-text'>
-              All electrical service and installations are only done with the
-              best of quality and communication througout the whole process.
-              Whether you need to upgrade your electrical panel or rennovate an
-              entire home project, we guarantee top service.
-            </p>
-          </div>
-          <ul className='list-group list-group-flush'>
-            <li className='list-group-item'>
-              {Checkmark} Light fixture installation
-            </li>
-            <li className='list-group-item'> {Checkmark} Ceiling fans</li>
-            <li className='list-group-item'>
-              {Checkmark} Electrical Vehicle (EV) Chargers
-            </li>
-            <li className='list-group-item'>{Checkmark} Ring / Nest Devices</li>
-            <li className='list-group-item'>{Checkmark} Recessed lighting</li>
-            <li className='list-group-item'>
-              {Checkmark} Bathroom exhaust fans
-            </li>
-            <li className='list-group-item'> {Checkmark} Lighting control</li>
-            <li className='list-group-item'>
-              {Checkmark} Electrical panel upgrades
-            </li>
-            <li className='list-group-item'>
-              {Checkmark} Dedicated circuits 120 volt or 240 volt
-            </li>
-            <li className='list-group-item'>
-              {Checkmark} Added outlets and switches interior and outdoor
-            </li>
-            <li className='list-group-item'>
-              {Checkmark} Smoke and carbon dioxide connectors
-            </li>
-          </ul>
-          <div className='card-body'>
-            <div className='d-flex justify-content-center mt-5'>
-              <div>
-                <button
-                  type='button'
-                  className='btn btn-lg btn-primary'
-                  style={{
-                    fontFamily: 'Work Sans, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '21px',
-                    letterSpacing: '.5px',
-                  }}
-                  onClick={() => {
-                    history.push('/services');
-                  }}
+      <div className='row justify-content-center'>
+        <div className='col-sm-4' style={{ marginRight: '20px' }}>
+          <div className='card card-flip h-100'>
+            <div className='card-front text-white bg-dark'>
+              <img
+                src={card1}
+                className='card-img-top'
+                alt='...'
+                style={{ opacity: 0.7 }}
+              />
+              <div className='card-body' style={{ padding: '0' }}>
+                <i className='fa fa-search fa-5x float-right'></i>
+                <div
+                  className='carousel-caption'
+                  style={{ marginBottom: '75px' }}
                 >
-                  Book now!
-                </button>
+                  <h3
+                    className='card-title'
+                    style={{ fontWeight: 400, fontSize: '61px' }}
+                  >
+                    ELECTRICAL SERVICE <br /> & INSTALLATION
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div className='card-back'>
+              <div className='card-body'>
+                <p
+                  className='card-text text-white'
+                  style={{ paddingBottom: '5px' }}
+                >
+                  All electrical service and installations are only done with
+                  the best of quality and communication througout the whole
+                  process. Whether you need to upgrade your electrical panel or
+                  rennovate an entire home project, we guarantee top service.
+                </p>
+                <ul className='list-group d-flex flex-row flex-wrap'>
+                  <li className='list-group-item w-50'>
+                    {Checkmark} Light fixture installation
+                  </li>
+                  <li className='list-group-item w-50'>
+                    {Checkmark} Ceiling fans
+                  </li>
+                  <li className='list-group-item w-50'>
+                    {Checkmark} Electrical Vehicle (EV) Chargers
+                  </li>
+                  <li className='list-group-item w-50'>
+                    {Checkmark} Ring / Nest Devices
+                  </li>
+                  <li className='list-group-item w-50'>
+                    {Checkmark} Recessed lighting
+                  </li>
+                  <li className='list-group-item w-50'>
+                    {Checkmark} Bathroom exhaust fans
+                  </li>
+                  <li className='list-group-item w-50'>
+                    {Checkmark} Lighting control
+                  </li>
+                  <li className='list-group-item w-50'>
+                    {Checkmark} Electrical panel upgrades
+                  </li>
+                  <li className='list-group-item w-50'>
+                    {Checkmark} Dedicated circuits 120 volt or 240 volt
+                  </li>
+                  <li className='list-group-item w-50'>
+                    {Checkmark} Added outlets and switches interior and outdoor
+                  </li>
+                  <li className='list-group-item w-50'>
+                    {Checkmark} Smoke and carbon dioxide connectors
+                  </li>
+                </ul>
+                <div
+                  className='d-flex justify-content-center'
+                  style={{ paddingTop: '25px' }}
+                >
+                  <div>
+                    <button
+                      type='button'
+                      className='btn btn-lg btn-primary'
+                      style={{
+                        fontFamily: 'Work Sans, sans-serif',
+                        fontWeight: 400,
+                        fontSize: '21px',
+                        letterSpacing: '.5px',
+                      }}
+                      onClick={() => {
+                        history.push('/services');
+                      }}
+                    >
+                      Book now!
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div
-          className='card'
-          style={{ width: '18rem', marginTop: '30px', margin: '0 200px' }}
-        >
-          <img src={card2} className='card-img-top' alt='...' />
-          <div className='card-body' style={{ height: '110px' }}>
-            <h5
-              className='card-title'
-              style={{ fontWeight: 600, fontSize: '30px' }}
-            >
-              Electrical Repair
-            </h5>
-            <p className='card-text'>
-              We handle every common and uncommon residential electrical issue
-              possible. If any emergency power outage or circuit breakers trip,
-              we are here to assist for any Mission Viejo neighbor or those in
-              the surrounding areas.
-            </p>
-          </div>
-          <ul
-            className='list-group list-group-flush'
-            style={{ marginTop: '85px' }}
-          >
-            <li className='list-group-item'>
-              {Checkmark} Lighting and outlet circuit repair
-            </li>
-            <li className='list-group-item'>
-              {Checkmark} Power outage or issues
-            </li>
-            <li className='list-group-item'>
-              {Checkmark} Circuit breaker issues
-            </li>
-            <li className='list-group-item'>
-              {Checkmark} Aluminum wiring repair
-            </li>
-            <li className='list-group-item'>
-              {Checkmark} Electrical panel repairs
-            </li>
-            <li className='list-group-item'> {Checkmark} Dimmer replacement</li>
-            <li className='list-group-item'>
-              {Checkmark} GFCI circuits and devices
-            </li>
-            <li className='list-group-item'>
-              {Checkmark} Electrical troubleshooting/diagnostic
-            </li>
-            <li className='list-group-item'>
-              {Checkmark} Federal Pacific/Zinsco electrical panel repairs
-            </li>
-          </ul>
-          <div className='card-body'>
-            <div className='d-flex justify-content-center mt-5'>
-              <div>
-                <button
-                  type='button'
-                  className='btn btn-lg btn-primary'
-                  style={{
-                    fontFamily: 'Work Sans, sans-serif',
-                    fontWeight: 400,
-                    fontSize: '21px',
-                    letterSpacing: '.5px',
-                    marginTop: '100px',
-                  }}
-                  onClick={() => {
-                    history.push('/services');
-                  }}
+        <div className='col-sm-4' style={{ marginLeft: '20px' }}>
+          <div className='card card-flip h-100'>
+            <div className='card-front text-white bg-warning'>
+              <div className='card-body'>
+                <i className='fa fa-search-plus fa-5x float-right'></i>
+                <h3
+                  className='card-title'
+                  style={{ fontWeight: 600, fontSize: '30px' }}
                 >
-                  BOOK ONLINE
-                </button>
+                  Electrical Repair
+                </h3>
+                <p className='card-text'>
+                  We handle every common and uncommon residential electrical
+                  issue possible. If any emergency power outage or circuit
+                  breakers trip, we are here to assist for any Mission Viejo
+                  neighbor or those in the surrounding areas.
+                </p>
+              </div>
+            </div>
+            <div className='card-back bg-dark text-white'>
+              <div className='card-body'>
+                <h3 className='card-title'>Back #2</h3>
+                <p className='card-text'>
+                  Suprise this one has content on the back!
+                </p>
+                <a href='#' className='btn btn-outline-secondary'>
+                  Action
+                </a>
               </div>
             </div>
           </div>
