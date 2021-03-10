@@ -1,6 +1,5 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Container } from '@material-ui/core';
 import './App.css';
 
 import About from './views/About';
@@ -16,7 +15,7 @@ import Showroom from './views/Showroom';
 const App = () => {
   return (
     <Router>
-      <Container maxWidth={false} style={{ padding: 0, margin: 0 }}>
+      <div className='contianer-fluid' style={{ padding: 0, margin: 0 }}>
         <MenuBar />
         <Route exact path='/' component={Home} />
         <Route path='/about' component={About} />
@@ -26,7 +25,7 @@ const App = () => {
         <Route path='/careers' component={Careers} />
         <FadeInSection />
         <Footer />
-      </Container>
+      </div>
     </Router>
   );
 };
