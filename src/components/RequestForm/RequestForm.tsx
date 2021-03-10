@@ -41,18 +41,6 @@ const RequestForm = () => {
         >
           <div className='col-6 mt-5'>
             <GoogleMap location={location} zoomLevel={13} />
-            {/* <a href='https://www.google.com/maps/place/Electric+Medics/@33.613528,-117.6789378,15z/data=!4m5!3m4!1s0x0:0xbfe07d4931a23eaf!8m2!3d33.613528!4d-117.6789378'>
-              <img
-                src={RequestFormMap}
-                alt='Map of southern Orange County'
-                style={{
-                  width: '100%',
-                  height: '93%',
-                  border: '2px solid rgb(241, 136, 5)',
-                  maxHeight: '600px',
-                }}
-              />
-            </a> */}
           </div>
           <div className='col-5 mt-3'>
             <h1
