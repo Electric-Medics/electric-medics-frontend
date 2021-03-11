@@ -20,6 +20,7 @@ flip card
     transform: rotateY(180deg);
     position: absolute;
     background: #36454f;
+    opacity: .9;
     top: 0;
 }
 
@@ -29,4 +30,12 @@ flip card
 
 .card-flip:hover .card-back {
     transform: rotateY(0deg);
+}
+
+.card {
+    border: none;
+}
+
+li {
+    border-bottom: none !important;
 }
