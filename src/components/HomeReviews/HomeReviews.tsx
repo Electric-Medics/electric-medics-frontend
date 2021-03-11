@@ -33,79 +33,70 @@ const HomeReviews = () => {
 
   return (
     <div
+      className='container-fluid p-5'
       style={{
-        background: 'linear-gradient(to top left, #808080 0%, #000000 100%)',
+        background: `url(${background}) no-repeat center center /cover`,
+        height: '450px',
         marginTop: '45px',
       }}
     >
-      <div
-        className='container-fluid p-5'
+      <div className='d-flex justify-content-center' style={{ color: 'white' }}>
+        <div>
+          {Star}
+          {Star}
+          {Star}
+          {Star}
+          {Star}
+        </div>
+      </div>
+      <h1
+        className='text-center'
         style={{
-          background: `url(${background}) no-repeat center center /cover`,
-          height: '450px',
+          fontFamily: 'Work Sans, sans-serif',
+          fontWeight: 600,
+          marginTop: '40px',
+          marginBottom: '10px',
+          color: 'white',
         }}
       >
-        <div
-          className='d-flex justify-content-center'
-          style={{ color: 'white' }}
-        >
-          <div>
-            {Star}
-            {Star}
-            {Star}
-            {Star}
-            {Star}
-          </div>
-        </div>
-        <h1
-          className='text-center'
-          style={{
-            fontFamily: 'Work Sans, sans-serif',
-            fontWeight: 600,
-            marginTop: '40px',
-            marginBottom: '10px',
-            color: 'white',
-          }}
-        >
-          "Finally after 50 years of dealing with electricians, I found one that
-          deserved a 5 star review and I will use in the future for other
-          electrical projects. Give Electric Medics a call. You won't be
-          disappointed."
-        </h1>
-        <h2
-          className='text-center'
-          style={{
-            fontFamily: 'Work Sans, sans-serif',
-            fontWeight: 300,
-            fontSize: '25px',
-            marginBottom: '20px',
-            color: 'white',
-          }}
-        >
-          - Wayne Gretzy Michael Scott
-        </h2>
-        <div className='d-flex justify-content-center mt-5'>
-          <div>
-            <button
-              type='button'
-              className='btn btn-lg'
-              style={{
-                borderColor: 'black',
-                borderWidth: '2.5px',
-                backgroundColor: '#F18805',
-                color: 'black',
-                fontFamily: 'Work Sans, sans-serif',
-                fontWeight: 300,
-                fontSize: '21px',
-                letterSpacing: '0.5px',
-              }}
-              onClick={() => {
-                history.push('/reviews');
-              }}
-            >
-              Read more reviews
-            </button>
-          </div>
+        "Finally after 50 years of dealing with electricians, I found one that
+        deserved a 5 star review and I will use in the future for other
+        electrical projects. Give Electric Medics a call. You won't be
+        disappointed."
+      </h1>
+      <h2
+        className='text-center'
+        style={{
+          fontFamily: 'Work Sans, sans-serif',
+          fontWeight: 300,
+          fontSize: '25px',
+          marginBottom: '20px',
+          color: 'white',
+        }}
+      >
+        - Wayne Gretzy Michael Scott
+      </h2>
+      <div className='d-flex justify-content-center mt-5'>
+        <div>
+          <button
+            type='button'
+            className='btn btn-lg'
+            style={{
+              borderColor: 'black',
+              borderWidth: '1.5px',
+              backgroundColor: '#F18805',
+              color: 'black',
+              fontFamily: 'Work Sans, sans-serif',
+              fontWeight: 300,
+              fontSize: '21px',
+              letterSpacing: '0.5px',
+            }}
+            onClick={() => {
+              history.push('/reviews');
+            }}
+          >
+            Read more reviews
+          </button>
         </div>
       </div>
     </div>
