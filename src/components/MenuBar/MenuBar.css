@@ -1,0 +1,6 @@
+span i {
+  padding-right: 5px;
+}
+span.nav-link:hover {
+  cursor: pointer;
+}
