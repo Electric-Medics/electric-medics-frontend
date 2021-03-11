@@ -12,6 +12,7 @@ const MenuBar = () => {
 
   useEffect(() => {
     setActiveItem(pathname);
+    console.log(pathname, activeItem);
   }, [pathname, activeItem]);
 
   return (
@@ -59,19 +60,63 @@ const MenuBar = () => {
                       <i className='fas fa-home'></i>HOME
                     </span>
                   </li>
-                  <li className='nav-link'>
+                  <li className='nav-link dropdown'>
                     <span
-                      className='nav-link'
+                      className='nav-link dropdown-toggle'
+                      id='navbarDropdown'
+                      data-bs-toggle='dropdown'
+                      aria-expanded='false'
                       style={{
                         color:
-                          activeItem === '/services' ? '#F18805' : '#1A8FE3',
-                      }}
-                      onClick={() => {
-                        history.push('/services');
+                          activeItem === '/services' ||
+                          activeItem === '/services/'
+                            ? '#F18805'
+                            : '#1A8FE3',
                       }}
                     >
-                      <i className='fas fa-plug'></i>SERVICES
+                      <i className='fas fa-plug'></i>
+                      Services
                     </span>
+                    <ul
+                      className='dropdown-menu'
+                      aria-labelledby='navbarDropdown'
+                      style={{
+                        background: '#e5e7e9',
+                      }}
+                    >
+                      <li>
+                        <a
+                          className='dropdown-item'
+                          href='/services/#1'
+                          style={{
+                            background: '#e5e7e9',
+                            color:
+                              activeItem === '/services' ||
+                              activeItem === '/services/'
+                                ? '#F18805'
+                                : '#1A8FE3',
+                          }}
+                        >
+                          Electrical Service and Installation
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className='dropdown-item'
+                          href='/services/#2'
+                          style={{
+                            background: '#e5e7e9',
+                            color:
+                              activeItem === '/services' ||
+                              activeItem === '/services/'
+                                ? '#F18805'
+                                : '#1A8FE3',
+                          }}
+                        >
+                          Electrical Repairs
+                        </a>
+                      </li>
+                    </ul>
                   </li>
                   <li className='nav-link'>
                     <span
