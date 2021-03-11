@@ -83,7 +83,7 @@ const HomeReviews = () => {
             className='btn btn-lg'
             style={{
               borderColor: 'black',
-              borderWidth: '2.5px',
+              borderWidth: '1.5px',
               backgroundColor: '#F18805',
               color: 'black',
               fontFamily: 'Work Sans, sans-serif',
