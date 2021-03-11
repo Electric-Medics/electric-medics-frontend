@@ -1,4 +1,3 @@
-import { nominalTypeHack } from 'prop-types';
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import card1 from '../../assets/images/ServiceCard-1.jpeg';
@@ -53,11 +52,7 @@ const ServiceCards = () => {
         <div className='col-sm-4' style={{ marginRight: '20px' }}>
           <div className='card card-flip h-100'>
             <div className='card-front text-white bg-dark'>
-              <img
-                src={card1}
-                className='card-img-top'
-                alt='...'
-              />
+              <img src={card1} className='card-img-top' alt='...' />
               <div className='card-body' style={{ padding: '0' }}>
                 <i className='fa fa-search fa-5x float-right'></i>
                 <div
@@ -90,7 +85,7 @@ const ServiceCards = () => {
                 </p>
                 <ul
                   className='list-group list-group-flush d-flex flex-row flex-wrap'
-                  style={{ fontWeight: 500}}
+                  style={{ fontWeight: 500 }}
                 >
                   <li className='list-group-item w-50'>
                     {Checkmark} Light fixture installation
@@ -144,7 +139,7 @@ const ServiceCards = () => {
                         history.push('/services');
                       }}
                     >
-                      Book now!
+                      Book Now!
                     </button>
                   </div>
                 </div>
@@ -155,11 +150,7 @@ const ServiceCards = () => {
         <div className='col-sm-4' style={{ marginLeft: '20px' }}>
           <div className='card card-flip h-100'>
             <div className='card-front text-white bg-dark'>
-              <img
-                src={card2}
-                className='card-img-top'
-                alt='...'
-              />
+              <img src={card2} className='card-img-top' alt='...' />
               <div className='card-body' style={{ padding: '0' }}>
                 <i className='fa fa-search fa-5x float-right'></i>
                 <div
@@ -240,7 +231,7 @@ const ServiceCards = () => {
                         history.push('/services');
                       }}
                     >
-                      Book now!
+                      Book Now!
                     </button>
                   </div>
                 </div>
