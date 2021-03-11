@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Container } from '@material-ui/core';
 import './App.css';
 
 import About from './views/About';
 import Careers from './views/Careers';
 import FadeInSection from './components/FadeInSection/FadeInSection';
 import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
 import Home from './views/Home';
 import MenuBar from './components/MenuBar/MenuBar';
 import Reviews from './views/Reviews';
@@ -16,7 +16,8 @@ import Showroom from './views/Showroom';
 const App = () => {
   return (
     <Router>
-      <Container maxWidth={false} style={{ padding: 0, margin: 0 }}>
+      <div className='contianer-fluid' style={{ padding: 0, margin: 0 }}>
+        <Header />
         <MenuBar />
         <Route exact path='/' component={Home} />
         <Route path='/about' component={About} />
@@ -26,7 +27,7 @@ const App = () => {
         <Route path='/careers' component={Careers} />
         <FadeInSection />
         <Footer />
-      </Container>
+      </div>
     </Router>
   );
 };
