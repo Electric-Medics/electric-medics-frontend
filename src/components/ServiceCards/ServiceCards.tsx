@@ -28,7 +28,7 @@ const ServiceCards = () => {
   return (
     <div
       className='container-fluid mt-5'
-      style={{ fontFamily: 'Work Sans, sans-serif' }}
+      style={{ fontFamily: 'Work Sans, sans-serif', marginBottom: '20px'}}
     >
       <h1 className='text-center' style={{ fontWeight: 600 }}>
         Our Electrical Services
