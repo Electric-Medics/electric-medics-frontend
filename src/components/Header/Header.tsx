@@ -19,6 +19,7 @@ const useStyles = makeStyles({
   },
   gridItemContainer: {
     display: 'flex',
+    justifyContent: 'center',
   },
   mapMarker: {
     top: '-17px',
@@ -30,7 +31,7 @@ const Header = () => {
   const classes = useStyles();
 
   return (
-    <Grid container className={classes.root}>
+    <Grid container justify='flex-start' className={classes.root}>
       <Grid item xs={3}>
         <Button href='/' className='headerLogo'>
           <img
@@ -53,7 +54,7 @@ const Header = () => {
         <p className={classes.gridItemTitle}>BUSINESS HOURS:</p>
         <p>Monday - Friday: 8:00AM - 5:00PM</p>
       </Grid>
-      <Grid className={classes.gridItemContainer} item xs={3} justify='center'>
+      <Grid className={classes.gridItemContainer} item xs={3}>
         <span className='containerSubmitRequest'>
           <span className='btnSubmitRequest'>
             <span>SUBMIT REQUEST</span>

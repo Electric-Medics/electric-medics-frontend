@@ -19,7 +19,7 @@ import {
 
 import './MenuBar.css';
 import Header from '../Header/Header';
-import DropDownMenu from '../DropDownMenu';
+import DropDownMenu from '../DropDownMenu/DropDownMenu';
 
 //Styled Components
 const MenuButton = styled(Button)({
