@@ -38,23 +38,33 @@ const ReviewCards = () => {
       <div className='container'>
         <div className='row justify-content-center'>
           {product &&
-            product.map((review) => {
+            product.map((review) => { 
+              const name = review['user']['name'];
+              const firstName = name[0];
+              let initials: String = '';
+
+              for (let index = 0; index < 10; index++) {
+                if (name[index] === ' ') {
+                    const lastName = name[index+1];
+                    initials = firstName + '' + lastName;
+                    break;
+                }
+              }
               return (
                 <div
                   className='col-xs-12 col-sm-6 col-md-3 col-lg-3'
                   key={review['id']}
                 >
-                  <a href=''>
+                  <a href={review['url']}>
                     <div className='card-flyer'>
                       <div className='text-box'>
-                        <div className='image-box'>
-                          <img
-                            src='https://cdn.pixabay.com/photo/2018/03/30/15/11/deer-3275594_960_720.jpg'
-                            alt=''
-                          />
-                        </div>
                         <div className='text-container'>
-                          <h6>{review['user']['name']}</h6>
+                          <h5>
+                            <div className='avatar'>{initials}</div>
+                            <div className='reviewer-name' style={{paddingLeft: '30px'}}>
+                              {review['user']['name']}
+                            </div>
+                          </h5>
                           <p>{review['text']}</p>
                         </div>
                       </div>
