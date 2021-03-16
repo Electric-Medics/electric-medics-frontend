@@ -1,11 +1,8 @@
 import React from 'react';
+import EmploymentForm from '../components/EmploymentForm/EmploymentForm';
 
 const Careers = () => {
-  return (
-    <div>
-      <h1>Careers</h1>
-    </div>
-  );
+  return <EmploymentForm />;
 };
 
 export default Careers;
