@@ -116,6 +116,10 @@ const ReviewCards = () => {
                               {Star}
                               {Star}
                             </div>
+                            <i
+                              className='fab fa-yelp'
+                              style={{ color: 'red', paddingLeft: '150px' }}
+                            ></i>
                           </div>
                           <p>{review['text']}</p>
                         </div>
