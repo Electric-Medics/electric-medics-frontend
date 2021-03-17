@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import background from '../..//assets/images/homeReviewsBackground.png';
 
 import './ReviewCards.css';
 
 const ReviewCards = () => {
-  const [product, setProduct] = useState([]);
+  const [yelpProduct, setYelpProduct] = useState([]);
+  const [facebookProduct, setFacebookProduct] = useState([]);
   const Star = (
     <svg
       style={{ height: '20px', width: '20px', marginBottom: '5px' }}
@@ -32,13 +32,35 @@ const ReviewCards = () => {
     </svg>
   );
 
-  const fetchData = async () => {
+  const fetchFacebookData = async () => {
+    await axios
+      .get(
+        'https://graph.facebook.com/228879437516779/ratings?access_token=EAACn0gMTXvEBAPgv7tZCqHgwtSt6TZBfiZA6NHFuKkgglHxSeNMUHrRs2AM9eR1hzd628kqAyjxJRj8R4LCz3FtZBeKxxqD1YxcXTEAGPhHZAQNuMIk7T6dUqevRHBEu9ZAACNOc8RcgRFpUp7eLxfCTGmfnQsZANZCy0QeDkIb4eIdY8C65Dc6tUWElperP60wZD',
+        {
+          headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'GET',
+            'Access-Control-Allow-Headers':
+              'Content-Type, Access-Control-Allow-Headers, X-Requested-With',
+          },
+        }
+      )
+      .then((res) => {
+        setFacebookProduct(res.data.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log('error');
+      });
+  };
+
+  const fetchYelpData = async () => {
     await axios
       .get(
         'https://peaceful-wave-86780.herokuapp.com/https://api.yelp.com/v3/businesses/electric-medics-mission-viejo/reviews',
         {
           headers: {
-            Authorization: `Bearer XVFbEH6i075av6-df82tScss7YmPqLPLkK2aRlJAPGin_W2RV268E1hQ1SSjHChl135Cmv9HWO2Q2H4amqABF0_MOyvZ5HJ7bge-u5k9mdrj0EzTLm5QcgvhdjFQYHYx`,
+            Authorization: `Bearer `,
             'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Methods': 'GET',
             'Access-Control-Allow-Headers':
@@ -47,7 +69,7 @@ const ReviewCards = () => {
         }
       )
       .then((res) => {
-        setProduct(res.data.reviews);
+        setYelpProduct(res.data.reviews);
         console.log(res.data.reviews);
       })
       .catch((err) => {
@@ -56,79 +78,140 @@ const ReviewCards = () => {
   };
 
   useEffect(() => {
-    fetchData();
+    fetchYelpData();
+    fetchFacebookData();
   }, []);
 
   return (
-    <div id='cards_landscape_wrap-2'>
-      <div className='container'>
-        <div className='row justify-content-center'>
-          {product &&
-            product.map((review) => {
-              const name = review['user']['name'];
-              const firstName = name[0];
-              let initials: String = '';
+    <div className='container-fluid' style={{ background: '#275C7A', textAlign: 'center'}}>
+      <div className='text-center display-1' style={{ fontWeight: 500, paddingTop: '25px', color: '#FFEF38'}}>
+        What Our Customers Say
+      </div>
+      <div id='cards_landscape_wrap-2'>
+        <div className='container-fluid'>
+          <div className='row justify-content-center'>
+            {yelpProduct &&
+              yelpProduct.map((review) => {
+                const name = review['user']['name'];
+                const firstName = name[0];
+                let initials: String = '';
 
-              for (let index = 0; index < 10; index++) {
-                if (name[index] === ' ') {
-                  const lastName = name[index + 1];
-                  initials = firstName + '' + lastName;
-                  break;
+                for (let index = 0; index < 10; index++) {
+                  if (name[index] === ' ') {
+                    const lastName = name[index + 1];
+                    initials = firstName + '' + lastName;
+                    break;
+                  }
                 }
-              }
-              return (
-                <div
-                  className='col-xs-12 col-sm-6 col-md-3 col-lg-3'
-                  key={review['id']}
-                >
-                  <a href={review['url']}>
-                    <div className='card-flyer'>
-                      <div className='text-box'>
-                        <div className='text-container'>
-                          <h5>
-                            <div className='avatar'>{initials}</div>
-                            <div
-                              className='reviewer-name'
-                              style={{ paddingLeft: '10px' }}
-                            >
-                              {review['user']['name']}
+                return (
+                  <div
+                    className='col-xs-12 col-sm-6 col-md-3 col-lg-3'
+                    key={review['id']}
+                  >
+                    <a href={review['url']}>
+                      <div className='card-flyer'>
+                        <div className='text-box'>
+                          <div className='text-container'>
+                            <h5>
+                              <div className='avatar'>{initials}</div>
                               <div
-                                className='reviewer-time'
-                                style={{
-                                  fontWeight: 300,
-                                  fontSize: '14px',
-                                  lineHeight: '20px',
-                                  color: 'lightgray',
-                                }}
+                                className='reviewer-name'
+                                style={{ paddingLeft: '10px' }}
                               >
-                                {review['time_created']}
+                                {review['user']['name']}
+                                <div
+                                  className='reviewer-time'
+                                  style={{
+                                    fontWeight: 300,
+                                    fontSize: '14px',
+                                    lineHeight: '20px',
+                                    color: 'lightgray',
+                                  }}
+                                >
+                                  {review['time_created']}
+                                </div>
                               </div>
+                            </h5>
+                            <div
+                              className='d-flex justify-content-left'
+                              style={{ color: 'white' }}
+                            >
+                              <div>
+                                {Star}
+                                {Star}
+                                {Star}
+                                {Star}
+                                {Star}
+                              </div>
+                              <i
+                                className='fab fa-yelp'
+                                style={{ color: 'red', paddingLeft: '250px' }}
+                              ></i>
                             </div>
-                          </h5>
-                          <div
-                            className='d-flex justify-content-left'
-                            style={{ color: 'white' }}
-                          >
-                            <div>
-                              {Star}
-                              {Star}
-                              {Star}
-                              {Star}
-                              {Star}
-                            </div>
-                            <i
-                              className='fab fa-yelp'
-                              style={{ color: 'red', paddingLeft: '150px' }}
-                            ></i>
+                            <p>{review['text']}</p>
                           </div>
-                          <p>{review['text']}</p>
                         </div>
                       </div>
-                    </div>
-                  </a>
-                </div>
-              );
-            })}
+                    </a>
+                  </div>
+                );
+              })}
+            {facebookProduct &&
+              facebookProduct.map((review) => {
+                return (
+                  <div
+                    className='col-xs-12 col-sm-6 col-md-3 col-lg-3'
+                    key={review['created_time']}
+                  >
+                    <a href='https://www.facebook.com/electricmedics/reviews'>
+                      <div className='card-flyer'>
+                        <div className='text-box'>
+                          <div className='text-container'>
+                            <h5>
+                              <div className='avatar'>FR</div>
+                              <div
+                                className='reviewer-name'
+                                style={{ paddingLeft: '10px' }}
+                              >
+                                Facebook Reviewer
+                                <div
+                                  className='reviewer-time'
+                                  style={{
+                                    fontWeight: 300,
+                                    fontSize: '14px',
+                                    lineHeight: '20px',
+                                    color: 'lightgray',
+                                  }}
+                                >
+                                  {review['created_time']}
+                                </div>
+                              </div>
+                            </h5>
+                            <div
+                              className='d-flex justify-content-left'
+                              style={{ color: 'white' }}
+                            >
+                              <div>
+                                {Star}
+                                {Star}
+                                {Star}
+                                {Star}
+                                {Star}
+                              </div>
+                              <i
+                                className='fab fa-facebook'
+                                style={{ color: 'blue', paddingLeft: '248px' }}
+                              ></i>
+                            </div>
+                            <p>{review['review_text']}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </a>
+                  </div>
+                );
+              })}
+          </div>
         </div>
       </div>
     </div>
