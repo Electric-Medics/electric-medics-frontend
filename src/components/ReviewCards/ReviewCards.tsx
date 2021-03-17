@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import background from '../..//assets/images/homeReviewsBackground.png';
 
 import './ReviewCards.css';
 
@@ -38,16 +39,16 @@ const ReviewCards = () => {
       <div className='container'>
         <div className='row justify-content-center'>
           {product &&
-            product.map((review) => { 
+            product.map((review) => {
               const name = review['user']['name'];
               const firstName = name[0];
               let initials: String = '';
 
               for (let index = 0; index < 10; index++) {
                 if (name[index] === ' ') {
-                    const lastName = name[index+1];
-                    initials = firstName + '' + lastName;
-                    break;
+                  const lastName = name[index + 1];
+                  initials = firstName + '' + lastName;
+                  break;
                 }
               }
               return (
@@ -61,8 +62,22 @@ const ReviewCards = () => {
                         <div className='text-container'>
                           <h5>
                             <div className='avatar'>{initials}</div>
-                            <div className='reviewer-name' style={{paddingLeft: '30px'}}>
+                            <div
+                              className='reviewer-name'
+                              style={{ paddingLeft: '10px' }}
+                            >
                               {review['user']['name']}
+                              <div
+                                className='reviewer-time'
+                                style={{
+                                  fontWeight: 300,
+                                  fontSize: '14px',
+                                  lineHeight: '20px',
+                                  color: 'lightgray',
+                                }}
+                              >
+                                {review['time_created']}
+                              </div>
                             </div>
                           </h5>
                           <p>{review['text']}</p>
