@@ -1,3 +1,6 @@
-.contactPhoneNumber:hover {
-  background-color: rgba(0, 0, 0, 0) !important;
+span i {
+  padding-right: 5px;
+}
+span.nav-link:hover {
+  cursor: pointer;
 }
