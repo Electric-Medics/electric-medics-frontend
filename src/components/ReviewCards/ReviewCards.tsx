@@ -6,6 +6,31 @@ import './ReviewCards.css';
 
 const ReviewCards = () => {
   const [product, setProduct] = useState([]);
+  const Star = (
+    <svg
+      style={{ height: '20px', width: '20px', marginBottom: '5px' }}
+      version='1.1'
+      id='Capa_1'
+      enableBackground='new 0 0 512 512'
+      x='0px'
+      y='0px'
+      viewBox='0 0 512 512'
+    >
+      <g>
+        <g>
+          <path
+            style={{ fill: '#FFD400' }}
+            d='M512,197.651L326,185.65L255.8,9.55l-70.201,176.1L0,197.651L142.399,318.85l-46.8,183.6
+        L255.8,401.05L416,502.45l-46.8-183.6L512,197.651z'
+          />
+          <polygon
+            style={{ fill: '#FDBF00' }}
+            points='369.2,318.85 416,502.45 255.8,401.05 255.8,9.55 326,185.65 512,197.651 '
+          />
+        </g>
+      </g>
+    </svg>
+  );
 
   const fetchData = async () => {
     await axios
@@ -80,6 +105,18 @@ const ReviewCards = () => {
                               </div>
                             </div>
                           </h5>
+                          <div
+                            className='d-flex justify-content-left'
+                            style={{ color: 'white' }}
+                          >
+                            <div>
+                              {Star}
+                              {Star}
+                              {Star}
+                              {Star}
+                              {Star}
+                            </div>
+                          </div>
                           <p>{review['text']}</p>
                         </div>
                       </div>
