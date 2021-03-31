@@ -1,10 +1,11 @@
 import React from 'react';
+import ShowroomCards from '../components/Showroom/Showroom';
 
 const Showroom = () => {
   return (
-    <div>
-      <h1>Showroom</h1>
-    </div>
+    <>
+      <ShowroomCards />
+    </>
   );
 };
 
