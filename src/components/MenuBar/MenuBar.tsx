@@ -1,181 +1,210 @@
 import React, { useEffect, useState } from 'react';
-import Icon from '@mdi/react';
-import {
-  AppBar,
-  Button,
-  Container,
-  makeStyles,
-  styled,
-  Toolbar,
-} from '@material-ui/core';
-import {
-  mdiBriefcase,
-  mdiHome,
-  mdiHomeGroup,
-  mdiInformation,
-  mdiNewspaperVariantMultiple,
-  mdiPhone,
-} from '@mdi/js';
+import { useHistory, useLocation } from 'react-router';
 
 import './MenuBar.css';
-import Header from '../Header/Header';
-import DropDownMenu from '../DropDownMenu/DropDownMenu';
-
-//Styled Components
-const MenuButton = styled(Button)({
-  color: '#1A8FE3',
-  fontSize: '16px',
-  fontFamily: 'Work Sans, sans-serif',
-  fontWeight: 500,
-  marginLeft: '40px',
-});
-
-const MenuIcon = styled(Icon)({
-  padding: '5px',
-});
-
-//Custom makeStyles Hook
-const useStyles = makeStyles({
-  appBar: {
-    display: 'flex',
-    flexDirection: 'row',
-    backgroundColor: '#F18805',
-    top: '800px',
-    left: '0',
-    fontFamily: 'Work Sans, sans-serif',
-  },
-  toolbar: {
-    backgroundColor: '#e5e7e9',
-    width: '75%',
-    left: '25px',
-  },
-  toolbarContainer: {
-    display: 'flex',
-    position: 'relative',
-    justifyContent: 'space-evenly',
-    backgroundColor: '#e5e7e9',
-  },
-});
 
 const MenuBar = () => {
-  const classes = useStyles();
-  const pathname = window.location.pathname;
+  let history = useHistory();
+  let location = useLocation();
+  const pathname = location.pathname;
   const path = pathname === '/' ? 'home' : pathname.substr(1);
   const [activeItem, setActiveItem] = useState(path);
 
   useEffect(() => {
     setActiveItem(pathname);
-  }, [pathname]);
+  }, [pathname, activeItem]);
 
   return (
-    <Container disableGutters={true} maxWidth={false}>
-      <Header />
-      <AppBar position={'sticky' || 'relative'} className={classes.appBar}>
-        <Toolbar className={classes.toolbar}>
-          <Container maxWidth='xl' className={classes.toolbarContainer}>
-            <MenuButton
-              href='/'
-              style={{
-                color: activeItem === '/' ? '#F18805' : '#1A8FE3',
-              }}
-            >
-              <MenuIcon
-                path={mdiHome}
-                size={1}
-                color={activeItem === '/' ? '#F18805' : '#1A8FE3'}
-              />
-              Home
-            </MenuButton>
-            <DropDownMenu activeItem={activeItem} />
-            <MenuButton
-              href='/reviews'
-              style={{
-                color: activeItem === '/reviews' ? '#F18805' : '#1A8FE3',
-              }}
-            >
-              <MenuIcon
-                path={mdiNewspaperVariantMultiple}
-                size={1}
-                color={activeItem === '/reviews' ? '#F18805' : '#1A8FE3'}
-              />
-              Reviews
-            </MenuButton>
-            <MenuButton
-              href='/showroom'
-              style={{
-                color: activeItem === '/showroom' ? '#F18805' : '#1A8FE3',
-              }}
-            >
-              <MenuIcon
-                path={mdiHomeGroup}
-                size={1}
-                color={activeItem === '/showroom' ? '#F18805' : '#1A8FE3'}
-              />
-              Showroom
-            </MenuButton>
-            <MenuButton
-              href='/about'
-              style={{
-                color: activeItem === '/about' ? '#F18805' : '#1A8FE3',
-              }}
-            >
-              <MenuIcon
-                path={mdiInformation}
-                size={1}
-                color={activeItem === '/about' ? '#F18805' : '#1A8FE3'}
-              />
-              About
-            </MenuButton>
-            <MenuButton
-              href='/careers'
-              style={{
-                color: activeItem === '/careers' ? '#F18805' : '#1A8FE3',
-              }}
-            >
-              <MenuIcon
-                path={mdiBriefcase}
-                size={1}
-                color={activeItem === '/careers' ? '#F18805' : '#1A8FE3'}
-              />
-              Careers
-            </MenuButton>
-          </Container>
-        </Toolbar>
-        <MenuButton
-          href='tel:(949)462-9200'
-          disableRipple={true}
-          disableTouchRipple={true}
-          className={'contactPhoneNumber'}
-          style={{
-            marginBottom: '15px',
-            left: '5%',
-            width: '250px',
-            color: '#FFF',
-            fontSize: '20px',
-            fontWeight: 500,
-          }}
-        >
-          <MenuIcon path={mdiPhone} size={1} color='#FFF' />
-          (949) 462-9200
-        </MenuButton>
+    <div
+      className='container-fluid p-0'
+      style={{
+        minHeight: '64px',
+        background: '#F18805',
+        WebkitBoxShadow: '0px 0px 5px rgba(50, 50, 50, 0.75)',
+        boxShadow: '0px 0px 5px rgba(50, 50, 50, 0.75)',
+      }}
+    >
+      <div className='row'>
+        <div className='col-9'>
+          <nav
+            className='navbar navbar-expand-lg p-0'
+            style={{
+              background: '#e5e7e9',
+              height: '100%',
+              minHeight: '64px',
+              marginLeft: '25px',
+            }}
+          >
+            <div className='container-fluid'>
+              <div className='collapse navbar-collapse d-flex' id='navbarNav'>
+                <ul
+                  className='navbar-nav d-flex justify-content-evenly'
+                  style={{
+                    width: '100%',
+                    fontSize: '16px',
+                    fontFamily: 'Work Sans, sans-serif',
+                    fontWeight: 500,
+                  }}
+                >
+                  <li className='nav-link'>
+                    <span
+                      className='nav-link'
+                      style={{
+                        color: activeItem === '/' ? '#F18805' : '#1A8FE3',
+                      }}
+                      onClick={() => {
+                        history.push('/');
+                      }}
+                    >
+                      <i className='fas fa-home'></i>HOME
+                    </span>
+                  </li>
+                  <li className='nav-link dropdown'>
+                    <span
+                      className='nav-link dropdown-toggle'
+                      id='navbarDropdown'
+                      data-bs-toggle='dropdown'
+                      aria-expanded='false'
+                      style={{
+                        color:
+                          activeItem === '/services' ||
+                          activeItem === '/services/'
+                            ? '#F18805'
+                            : '#1A8FE3',
+                      }}
+                    >
+                      <i className='fas fa-plug'></i>
+                      Services
+                    </span>
+                    <ul
+                      className='dropdown-menu'
+                      aria-labelledby='navbarDropdown'
+                      style={{
+                        background: '#e5e7e9',
+                      }}
+                    >
+                      <li>
+                        <a
+                          className='dropdown-item'
+                          href='/services/#1'
+                          style={{
+                            background: '#e5e7e9',
+                            color:
+                              activeItem === '/services' ||
+                              activeItem === '/services/'
+                                ? '#F18805'
+                                : '#1A8FE3',
+                          }}
+                        >
+                          Electrical Service and Installation
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className='dropdown-item'
+                          href='/services/#2'
+                          style={{
+                            background: '#e5e7e9',
+                            color:
+                              activeItem === '/services' ||
+                              activeItem === '/services/'
+                                ? '#F18805'
+                                : '#1A8FE3',
+                          }}
+                        >
+                          Electrical Repairs
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li className='nav-link'>
+                    <span
+                      className='nav-link'
+                      style={{
+                        color:
+                          activeItem === '/reviews' ? '#F18805' : '#1A8FE3',
+                      }}
+                      onClick={() => {
+                        history.push('/reviews');
+                      }}
+                    >
+                      <i className='far fa-newspaper'></i>REVIEWS
+                    </span>
+                  </li>
+                  <li className='nav-link'>
+                    <span
+                      className='nav-link'
+                      style={{
+                        color:
+                          activeItem === '/showroom' ? '#F18805' : '#1A8FE3',
+                      }}
+                      onClick={() => {
+                        history.push('/showroom');
+                      }}
+                    >
+                      <i className='fas fa-person-booth'></i>SHOWROOM
+                    </span>
+                  </li>
+                  <li className='nav-link'>
+                    <span
+                      className='nav-link'
+                      style={{
+                        color: activeItem === '/about' ? '#F18805' : '#1A8FE3',
+                      }}
+                      onClick={() => {
+                        history.push('/about');
+                      }}
+                    >
+                      <i className='fas fa-info-circle'></i>ABOUT
+                    </span>
+                  </li>
+                  <li className='nav-link'>
+                    <span
+                      className='nav-link'
+                      style={{
+                        color:
+                          activeItem === '/careers' ? '#F18805' : '#1A8FE3',
+                      }}
+                      onClick={() => {
+                        history.push('/careers');
+                      }}
+                    >
+                      <i className='fas fa-briefcase'></i>CAREERS
+                    </span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
         <div
+          className='col-3 d-flex justify-content-center align-items-center'
           style={{
-            display: 'flex',
-            position: 'relative',
-            color: '#FFF',
-            fontSize: '13px',
+            color: 'white',
+            fontSize: '22px',
             fontFamily: 'Work Sans, sans-serif',
             fontWeight: 400,
-            cursor: 'pointer',
-            width: '12%',
-            top: '40px',
-            right: '120px',
           }}
         >
-          Contact Us Today for Assistance
+          <a
+            href='tel:(949)462-9200'
+            style={{
+              textDecoration: 'none',
+              color: 'white',
+              fontSize: '22px',
+              fontFamily: 'Work Sans, sans-serif',
+              fontWeight: 400,
+            }}
+          >
+            <i
+              className='fas fa-phone-alt fa-sm'
+              style={{ color: 'white', paddingRight: '5px' }}
+            ></i>
+            (949) 462-9200
+          </a>
         </div>
-      </AppBar>
-    </Container>
+      </div>
+    </div>
   );
 };
 
