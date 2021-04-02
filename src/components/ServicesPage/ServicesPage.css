@@ -1,0 +1,14 @@
+.services-page {
+  font-family: 'Work Sans', sans-serif;
+}
+.services-page-list {
+  margin-top: 15px;
+}
+ul.services-page-list {
+  list-style-type: none;
+}
+ul.services-page-list li i {
+  padding-right: 15px;
+  margin-bottom: 15px;
+  color: #f18805;
+}

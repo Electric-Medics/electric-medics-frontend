@@ -1,11 +1,13 @@
 import React from 'react';
+import ContactUs from '../components/ContactUs/ContactUs';
+
+import ServicesPage from '../components/ServicesPage/ServicesPage';
 
 const Services = () => {
   return (
     <div>
-      <h1>Services</h1>
-      <div id='1'>Hello</div>
-      <div id='2'>World</div>
+      <ServicesPage />
+      <ContactUs />
     </div>
   );
 };
