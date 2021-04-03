@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 import './ReviewCards.css';
 
@@ -33,48 +32,15 @@ const ReviewCards = () => {
   );
 
   const fetchFacebookData = async () => {
-    await axios
-      .get(
-        'https://graph.facebook.com/228879437516779/ratings?access_token=EAACn0gMTXvEBAPgv7tZCqHgwtSt6TZBfiZA6NHFuKkgglHxSeNMUHrRs2AM9eR1hzd628kqAyjxJRj8R4LCz3FtZBeKxxqD1YxcXTEAGPhHZAQNuMIk7T6dUqevRHBEu9ZAACNOc8RcgRFpUp7eLxfCTGmfnQsZANZCy0QeDkIb4eIdY8C65Dc6tUWElperP60wZD',
-        {
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET',
-            'Access-Control-Allow-Headers':
-              'Content-Type, Access-Control-Allow-Headers, X-Requested-With',
-          },
-        }
-      )
-      .then((res) => {
-        setFacebookProduct(res.data.data);
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log('error');
-      });
+    const response = await fetch('http://localhost:1234/getFacebookReviews');
+    const data = await response.json();
+    setFacebookProduct(data.data);
   };
 
   const fetchYelpData = async () => {
-    await axios
-      .get(
-        'https://peaceful-wave-86780.herokuapp.com/https://api.yelp.com/v3/businesses/electric-medics-mission-viejo/reviews',
-        {
-          headers: {
-            Authorization: `Bearer `,
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': 'GET',
-            'Access-Control-Allow-Headers':
-              'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
-          },
-        }
-      )
-      .then((res) => {
-        setYelpProduct(res.data.reviews);
-        console.log(res.data.reviews);
-      })
-      .catch((err) => {
-        console.log('error');
-      });
+    const response = await fetch('http://localhost:1234/getYelpReviews');
+    const data = await response.json();
+    setYelpProduct(data.reviews);
   };
 
   useEffect(() => {
@@ -83,8 +49,14 @@ const ReviewCards = () => {
   }, []);
 
   return (
-    <div className='container-fluid' style={{ background: '#275C7A', textAlign: 'center'}}>
-      <div className='text-center display-1' style={{ fontWeight: 500, paddingTop: '25px', color: '#FFEF38'}}>
+    <div
+      className='container-fluid'
+      style={{ background: '#275C7A', textAlign: 'center' }}
+    >
+      <div
+        className='text-center display-1'
+        style={{ fontWeight: 500, paddingTop: '25px', color: '#FFEF38' }}
+      >
         What Our Customers Say
       </div>
       <div id='cards_landscape_wrap-2'>
