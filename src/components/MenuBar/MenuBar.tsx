@@ -12,7 +12,6 @@ const MenuBar = () => {
 
   useEffect(() => {
     setActiveItem(pathname);
-    console.log(pathname, activeItem);
   }, [pathname, activeItem]);
 
   return (
