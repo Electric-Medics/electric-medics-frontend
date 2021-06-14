@@ -37,8 +37,8 @@ const Carousel = () => {
           <div className='carousel-item active'>
             <picture>
               <source srcSet={test} media='(min-width: 1400px)' />
-              <source srcSet={test} media='(min-width: 769px)' />
-              <source srcSet={test} media='(min-width: 577px)' />
+              <source srcSet={test} media='(min-width: 768px)' />
+              <source srcSet={test} media='(min-width: 576px)' />
               <img
                 srcSet={test}
                 alt='responsive'
@@ -55,11 +55,11 @@ const Carousel = () => {
               />
               <source
                 srcSet='https://www.statece.com/wp-content/uploads/sites/2/2019/06/1-Electrician.jpg'
-                media='(min-width: 769px)'
+                media='(min-width: 768px)'
               />
               <source
                 srcSet='https://www.statece.com/wp-content/uploads/sites/2/2019/06/1-Electrician.jpg'
-                media='(min-width: 577px)'
+                media='(min-width: 576px)'
               />
               <img
                 srcSet='https://www.statece.com/wp-content/uploads/sites/2/2019/06/1-Electrician.jpg'
@@ -77,11 +77,11 @@ const Carousel = () => {
               />
               <source
                 srcSet='https://99designs-blog.imgix.net/blog/wp-content/uploads/2020/08/Electrician_Logos_jpg_DhYbEzou.jpg?auto=format&q=60&fit=max&w=930'
-                media='(min-width: 769px)'
+                media='(min-width: 768px)'
               />
               <source
                 srcSet='https://99designs-blog.imgix.net/blog/wp-content/uploads/2020/08/Electrician_Logos_jpg_DhYbEzou.jpg?auto=format&q=60&fit=max&w=930'
-                media='(min-width: 577px)'
+                media='(min-width: 576px)'
               />
               <img
                 srcSet='https://99designs-blog.imgix.net/blog/wp-content/uploads/2020/08/Electrician_Logos_jpg_DhYbEzou.jpg?auto=format&q=60&fit=max&w=930'
