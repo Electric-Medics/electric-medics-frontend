@@ -1,6 +1,6 @@
 import React from 'react';
 import AboutUsIcon from '../../assets/images/AboutUsIcon.png';
-
+/** Need to trigger pipeline */
 const AboutUs = () => {
   return (
     <div
