@@ -68,7 +68,7 @@ const RequestForm = () => {
                   onSubmit={handleSubmit(onSubmit)}
                   style={{ minHeight: '500px', maxHeight: '501px' }}
                 >
-                  <div className='col-md-6 mb-3'>
+                  <div className='col-md-6 mb-1'>
                     <input
                       type='text'
                       name='name'
@@ -84,7 +84,7 @@ const RequestForm = () => {
                       <span className='error-msg'>This field is required</span>
                     )}
                   </div>
-                  <div className='col-md-6 mb-3'>
+                  <div className='col-md-6 mb-1'>
                     <input
                       type='email'
                       name='email'
@@ -93,7 +93,8 @@ const RequestForm = () => {
                       placeholder='Enter your email'
                       ref={register({
                         required: true,
-                        pattern: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                        pattern:
+                          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
                       })}
                     />
                     {errors.email ? (
@@ -108,7 +109,7 @@ const RequestForm = () => {
                       )
                     ) : null}
                   </div>
-                  <div className='col-12 mb-3'>
+                  <div className='col-12 mb-1'>
                     <input
                       type='tel'
                       name='phoneNumber'
@@ -117,7 +118,8 @@ const RequestForm = () => {
                       placeholder='Enter your phone number'
                       ref={register({
                         required: true,
-                        pattern: /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
+                        pattern:
+                          /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/,
                       })}
                     />
                     {errors.phoneNumber ? (
@@ -132,7 +134,7 @@ const RequestForm = () => {
                       )
                     ) : null}
                   </div>
-                  <div className='col-12 mb-3'>
+                  <div className='col-12 mb-1'>
                     <input
                       type='text'
                       className='form-control'
@@ -145,7 +147,7 @@ const RequestForm = () => {
                       <span className='error-msg'>This field is required</span>
                     )}
                   </div>
-                  <div className='col-12 mb-3'>
+                  <div className='col-12 mb-1'>
                     <textarea
                       className='form-control'
                       name='request'
