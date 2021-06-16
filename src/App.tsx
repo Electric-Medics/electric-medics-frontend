@@ -16,7 +16,10 @@ import Showroom from './views/Showroom';
 const App = () => {
   return (
     <Router>
-      <div className='contianer-fluid' style={{ padding: 0, margin: 0 }}>
+      <div
+        className='contianer-fluid'
+        style={{ padding: 0, margin: 0, overflow: 'hidden' }}
+      >
         <Header />
         <MenuBar />
         <Switch>
@@ -28,8 +31,8 @@ const App = () => {
           <Route path='/careers' component={Careers} />
           <Route path='*' component={NotFound} />
         </Switch>
-        <Footer />
       </div>
+      <Footer />
     </Router>
   );
 };
